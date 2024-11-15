@@ -48,6 +48,12 @@ const Movie = mongoose.model('Movie', movieSchema);
   res.json(movies);
 });
 
+// Defines a GET route at /api/movie/:id, where :id is a parameter for the movie’s unique ID.
+app.get('/api/movie/:id', async (req, res) => {
+  const movie = await Movie.findById(req.params.id); // This method searches the movies collection for a document with the ID provided in the URL.
+  res.send(movie); // If a movie is found, it’s sent back in JSON format.
+});
+
 // Posting the user inputted movie from the client into the server
 app.post('/api/movies', (req,res) => {
     console.log(req.body.title); // Title is now on the server
