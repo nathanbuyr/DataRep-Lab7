@@ -15,12 +15,12 @@ const MovieItem = (props)=>
             {/*Creating the card structure for each movie*/}
             <Card>
              {/*Header for the title*/}
-            <Card.Header>{props.myMovies.Title}</Card.Header>
+            <Card.Header>{props.myMovies.title}</Card.Header>
             <Card.Body>
             <blockquote className="blockquote mb-0">
-            <img src={props.myMovies.Poster}></img>
+            <img src={props.myMovies.poster}></img>
             {/*Footer adds extra info at the bottom of card*/}
-            <footer>{props.myMovies.Year}</footer>
+            <footer>{props.myMovies.year}</footer>
             </blockquote>
             </Card.Body>
             </Card>
