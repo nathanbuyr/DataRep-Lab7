@@ -29,6 +29,16 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', movieSchema);
 
+ app.post('/api/movies', async (req, res)=>{
+
+ const { title, year, poster } = req.body;
+
+ const newMovie = new Movie({ title, year, poster });
+ await newMovie.save();
+
+ res.status(201).json({ message: 'Movie created successfully', movie: newMovie });
+ })
+
 app.get('/api/movies', (req, res) => { //Json data is on the server backend 
     const movies = [
        
