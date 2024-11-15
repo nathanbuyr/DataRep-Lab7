@@ -18,6 +18,17 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://admin:admin@lab7.bhppf.mongodb.net/DB14');
+
+const movieSchema = new mongoose.Schema({
+  title: String,
+  year: String,
+  poster: String
+});
+
+const Movie = mongoose.model('Movie', movieSchema);
+
 app.get('/api/movies', (req, res) => { //Json data is on the server backend 
     const movies = [
        
