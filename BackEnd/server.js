@@ -60,13 +60,15 @@ app.post('/api/movies', (req,res) => {
     res.send("Movie added");
 })
 
+// Used to retrieve the current movie details, which are shown in the edit form
 app.get('/api/movie/:id', async (req, res) => {
-  let movie = await movieModel.findById({ _id: req.params.id });
+  let movie = await Movie.findById({ _id: req.params.id });
   res.send(movie);
 });
 
+// This route updates a specific movie’s information. When the user submits the edited data, this route takes the updated details from req.body and updates the movie in the database. The server then returns the updated movie details to confirm the change.
 app.put('/api/movie/:id', async (req, res) => {
-  let movie = await movieModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  let movie = await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true });
   res.send(movie);
 });
 

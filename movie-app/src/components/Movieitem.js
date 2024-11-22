@@ -25,7 +25,7 @@ const MovieItem = (props)=>
             </blockquote>
             </Card.Body>
             {/*This code snippet adds an "Edit" button to each movie item, allowing users to navigate to the edit page for that specific movie. */}
-            <Link classname="btn btn-primary" to={"/edit/"+props.myMovies.id}>Edit</Link>
+            <Link to={"/edit/" + props.myMovies._id} className="btn btn-primary">Edit</Link>
             </Card>
         </div>
     );
