@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Content />} />
         <Route path="/read" element={<Read />} />
         <Route path="/create" element={<Create />} />
-        <Route path='edit/:id' element={<Edit />} />
+        <Route path='edit/:id' element={<Edit />} /> {/* This line adds a new route to the application’s router configuration. The route allows users to navigate to the Edit component when they want to edit a specific movie. */}
       </Routes>
     </Router>
   );
