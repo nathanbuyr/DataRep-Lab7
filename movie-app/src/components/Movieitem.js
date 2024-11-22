@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 {/* MovieItem Function*/ }
 {/* Using seprated components,it separates concerns and makes the app modular*/ }
@@ -23,6 +24,7 @@ const MovieItem = (props)=>
             <footer>{props.myMovies.year}</footer>
             </blockquote>
             </Card.Body>
+            <Link classname="btn btn-primary" to={"/edit/"+props.myMovies.id}>Edit</Link>
             </Card>
         </div>
     );

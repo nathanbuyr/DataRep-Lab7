@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/Content';
 import Read from './components/Read';
+import Edit from './components/edit';
 import Create from './components/Create';
 {/* Imports from excercise 5 to use in this file*/ }
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Content />} />
         <Route path="/read" element={<Read />} />
         <Route path="/create" element={<Create />} />
+        <Route path='edit/:id' element={<Edit />} />
       </Routes>
     </Router>
   );

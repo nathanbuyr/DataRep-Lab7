@@ -60,6 +60,16 @@ app.post('/api/movies', (req,res) => {
     res.send("Movie added");
 })
 
+app.get('/api/movie/:id', async (req, res) => {
+  let movie = await movieModel.findById({ _id: req.params.id });
+  res.send(movie);
+});
+
+app.put('/api/movie/:id', async (req, res) => {
+  let movie = await movieModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.send(movie);
+});
+
 
 app.listen(port, () => { // app.listen is used to listen for connections and log when a connection is found
     console.log('Server is running on http://localhost:${port}');
